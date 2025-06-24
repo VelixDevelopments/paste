@@ -81,10 +81,6 @@ function get404Message(pasteId: string) {
 }
 
 function getPasteIdFromUrl() {
-  const path = window.location.pathname;
-  if (path && /^\/[a-zA-Z0-9]+$/.test(path)) {
-    return path.substring(1);
-  } else {
-    return undefined;
-  }
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('pasteId') ?? undefined;
 }
