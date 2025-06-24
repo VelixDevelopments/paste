@@ -60,7 +60,7 @@ export default function EditorControls({
       setRecentlySaved(true);
       if (pasteId) {
         history.replace({
-          pathname: pasteId,
+          search: `?pasteId=${pasteId}`,
         });
         copy(window.location.href);
         document.title = 'paste | ' + pasteId;
